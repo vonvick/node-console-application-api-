@@ -65,18 +65,25 @@ read.on('line',(line) => {
 
     // Displays an option to send a post request to twitter on your timeline
     case '2':
-      read.question('Enter some text you want to post on tweeter: ', function(answer) {
-        var results = "";
-        tweet.post('statuses/update', { status: answer }, function(err, data, response) {
-          var object = data;
-          console.log('Your tweet has been posted. Here are some information');
-          console.log('Your tweet was posted at: ',object.created_at);
-          console.log('Your tweet was: ',object.text);
-          console.log('Your name is: ',object.user.name);
-          console.log('Your are a: ',object.user.description);
-          console.log('Your are at: ',object.user.time_zone);
+      read.question('Enter some text you want to post on twitter: ', function(answer) {
+        if(answer.length < 140) {
+          var results = "";
+          tweet.post('statuses/update', { status: answer }, function(err, data, response) {
+            var object = data;
+            console.log('Your tweet has been posted. Here are some information');
+            console.log('Your tweet was posted at: ',object.created_at);
+            console.log('Your tweet was: ',object.text);
+            console.log('Your name is: ',object.user.name);
+            console.log('Your are a: ',object.user.description);
+            console.log('Your are at: ',object.user.time_zone);
+            intro();
+          })
+        } else {
+          console.log('');
+          console.log('Your text is longer than 140 characters');
+          console.log('');
           intro();
-        })
+        }
       });
       break;
 
