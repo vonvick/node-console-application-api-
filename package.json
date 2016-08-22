@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/vonvick/node-console-application-api-/issues"
   },
-  "homepage": "https://github.com/vonvick/node-console-application-api-#readme"
+  "homepage": "https://github.com/vonvick/node-console-application-api-#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
