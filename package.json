@@ -1,0 +1,24 @@
+{
+  "name": "node-console-application-api-",
+  "version": "1.0.0",
+  "description": "An node console application that consumes API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vonvick/node-console-application-api-.git"
+  },
+  "keywords": [
+    "node",
+    "console",
+    "API"
+  ],
+  "author": "Victor Nwaiwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vonvick/node-console-application-api-/issues"
+  },
+  "homepage": "https://github.com/vonvick/node-console-application-api-#readme"
+}
