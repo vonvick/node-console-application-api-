@@ -24,7 +24,7 @@ console.log('Welcome to the WEATHER and TWEET API');
 function intro() {
   console.log('Press "1" to get the weather of a location');
   console.log('Press "2" to post a tweet on tweeter');
-  console.log('Press "3" to exit the application');
+  console.log('Type "exit" to exit the application');
 }
 intro();
 
@@ -33,6 +33,7 @@ read.prompt();
 
 read.on('line',(line) => {
   switch(line.trim()) {
+    // displays the weather information of a place given by the user
     case '1':
       read.question('Enter the name of the city you want to know the weather for: ', function(answer) {
         var link = "http://api.openweathermap.org/data/2.5/weather?q="+answer+"&mode=json&appid=d2088317ea35009392201419e1b5d2af";
@@ -61,6 +62,7 @@ read.on('line',(line) => {
       });
       break;
 
+    // Displays an option to send a post request to twitter on your timeline
     case '2':
       read.question('Enter some text you want to post on tweeter: ', function(answer) {
         var results = "";
@@ -72,6 +74,7 @@ read.on('line',(line) => {
           console.log('Your name is: ',object.user.name);
           console.log('Your are a: ',object.user.description);
           console.log('Your are at: ',object.user.time_zone);
+          intro();
         })
       });
       break;
@@ -81,7 +84,6 @@ read.on('line',(line) => {
       break;
 
     default:
-      console.log('Enter a text');
+      intro();
   }
 });
-// }
