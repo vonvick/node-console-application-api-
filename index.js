@@ -2,8 +2,8 @@
 
 // require dependencies that are needed to run the app
 var readline = require('readline');
-var request = require('request');
-var Twitter = require('twitter');
+var request  = require('request');
+var Twitter  = require('twitter');
 
 // Twitter parameters for the tweeter API
 var tweet = new Twitter({
