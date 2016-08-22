@@ -7,10 +7,10 @@ var Twitter = require('twitter');
 
 // Twitter parameters for the tweeter API
 var tweet = new Twitter({
-  consumer_key: 'JyQl49m1TtOxbTZ4Iu4rSCgmo',
-  consumer_secret: 'KgH7Uk8Mt9jX4RbmQ12tUjuZeTOHHqEp3tQ9pOL78FzcSkmWXL',
-  access_token_key: '237870436-QmPt2K6k0LDmEWKfyXELYLte5Z5dmHIWccFTJ9er',
-  access_token_secret: '6wkVIM15qwSHSXlpqszcrDHhvzUmJjlKTVVrHQNTAXT0G'
+  consumer_key: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  consumer_secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  access_token_key: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  access_token_secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 });
 
 var read = readline.createInterface({
@@ -36,7 +36,8 @@ read.on('line',(line) => {
     // displays the weather information of a place given by the user
     case '1':
       read.question('Enter the name of the city you want to know the weather for: ', function(answer) {
-        var link = "http://api.openweathermap.org/data/2.5/weather?q="+answer+"&mode=json&appid=d2088317ea35009392201419e1b5d2af";
+        // put in your api key in the part with "xxxxxxxxxxxxxxxxx"
+        var link = "http://api.openweathermap.org/data/2.5/weather?q="+answer+"&mode=json&appid=xxxxxxxxxxxxxxxxxxxxx";
         var results = "";
         request({
           url: link, //URL to hit
