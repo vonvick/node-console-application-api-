@@ -23,6 +23,8 @@
   "homepage": "https://github.com/vonvick/node-console-application-api-#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "dotenv": "^2.0.0"
+    "dotenv": "^2.0.0",
+    "request": "^2.74.0",
+    "twitter": "^1.4.0"
   }
 }
