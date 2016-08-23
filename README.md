@@ -5,11 +5,13 @@ It makes use of two APIs. I consumed an API from [Openweather](www.openweather.o
 
 ## Procedure
 To use both APIs, you need to register on their various website to obtain your key to be used within your application. After getting the key, you need to create a .env file and store your details in the following format and save:
+
 1. consumer_key='input your consumer_key here'
 2. consumer_secret='input your consumer_secret key here'
 3. access_token_key='input your access_token_key here'
 4. access_token_secret='input your access_token_secret key here'
 5. openweather_key='input your openweather_key here'
+
 After saving the file, you can start using the application.
 
 ## Instructions
