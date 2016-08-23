@@ -1,21 +1,17 @@
 #!/usr/bin/env node
 
 // require dependencies that are needed to run the app
+require('dotenv').config();
 var readline = require('readline');
 var request  = require('request');
 var Twitter  = require('twitter');
 
 // Twitter parameters for the tweeter API
 var tweet = new Twitter({
-  consumer_key: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  consumer_secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  access_token_key: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  access_token_secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-});
-
-var read = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+  consumer_key: process.env.consumer_key,
+  consumer_secret: process.env.consumer_secret,
+  access_token_key: process.env.access_token_key,
+  access_token_secret:process.env.access_token_secret
 });
 
 console.log('Welcome to the WEATHER and TWEET API');
@@ -29,6 +25,10 @@ function intro() {
 intro();
 
 // Initiate the Questions asked to the user
+var read = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 read.prompt();
 
 read.on('line',(line) => {
@@ -37,7 +37,7 @@ read.on('line',(line) => {
     case '1':
       read.question('Enter the name of the city you want to know the weather for: ', function(answer) {
         // put in your api key in the part with "xxxxxxxxxxxxxxxxx"
-        var link = "http://api.openweathermap.org/data/2.5/weather?q="+answer+"&mode=json&appid=xxxxxxxxxxxxxxxxxxxxx";
+        var link = "http://api.openweathermap.org/data/2.5/weather?q="+answer+"&mode=json&appid="+process.env.openweather_key;
         var results = "";
         request({
           url: link, //URL to hit
